@@ -76,18 +76,18 @@
 		}
 		
 		body {
-			background-color: #f2f2f2;
+			background-color: #d9d9d9;
 			color: #d8d8d8;
 		}
 		/* NAVBAR STYLING STARTS */
 		.navbar {
                         font-size: 25px;
-			background-color: #d9d9d9;
+			background-color: #f2f2f2;
                         color: black;
                         margin: 20px 5%;
 			height: 85px;
 			width: auto;
-			border-radius: 25px;
+			border-radius: 100px;
 			box-shadow: rgba(0, 0, 0, 0.25) 0px 0 0, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 		}
 
@@ -96,9 +96,9 @@
                   transition-duration: 0.2s;
                   text-align: center;
                   padding: 2px 10px;
-                  margin: 0 25px;
+                  margin: 0 0 0 55px;
                 }
-                .navbar a:hover {
+                .navbar .navbaritem:hover{
                    opacity: 0.5;
                    color: black;
                 }
@@ -108,15 +108,19 @@
 		}
 		
 		.profilepicture {
-			width: 50%;
+			width: 55%;
 			transition-duration: 0.2s;
+                        border-radius: 50px;
+		}
+		.profilepicture:hover {
+                        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 		}
 }
 
 	</style>
 
 	<body>
-	<div class="navbar"><a href="#" class="w3-animate-opacity raise navbaritem">Home</a><a style="opacity: 0.3;" class="w3-hide-medium w3-hide-small" style="float: right;">spud</a><a href="/"><img src="https://welcomer.spudjs.repl.co/circle?url=https://cdn.discordapp.com/avatars/768362780545384449/6664fe457ac776ef9b7602485f4de59c.png" class="raise profilepicture" alt="pfp"></a></div>
+	<div class="navbar"><a href="#" class="w3-animate-opacity raise navbaritem">Home</a><a class="w3-hide-small w3-hide-medium" style="text-decoration: none; cursor: default; pointer-events: none; opacity: 0.5;">My Portfolio</a><a><img src="https://cdn.discordapp.com/avatars/768362780545384449/6664fe457ac776ef9b7602485f4de59c.png" class="profilepicture w3-animate-opacity" alt="pfp"></a></div>
 
 
 <script>
