@@ -62,7 +62,7 @@
 		
 		body {
 			background-color: #d9d9d9;
-			color: #d8d8d8;
+			color: black;
 		}
 		/* NAVBAR STYLING STARTS */
 		.navbar {
@@ -83,9 +83,10 @@
                   padding: 2px 10px;
                   margin: 0 0 0 55px;
                 }
+
                 .navbar .navbaritem:hover{
-                   opacity: 0.5;
-                   color: black;
+                   border-radius: 50px;
+                   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 2px;
                 }
 		
 		.raise:hover {
@@ -98,7 +99,7 @@
                         border-radius: 50px;
 		}
 		.profilepicture:hover {
-                        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+                        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 4px;
 		}
                @keyframes fadeInAnimation {
                  0% {
@@ -108,17 +109,58 @@
                     opacity: 1;
                  }
                }
+                .dark-mode {
+                  background-color: #212121;
+                  color: rgba(255,255,255,0.8);
+                  transition-duration: 0.2s;
+               }
+               .bigtitle {
+                   font-size: 90px;
+               }
+
+/* CSS */
+.button-38 {
+  border: 0;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition-duration: 0.2s;
+  margin: 0 2px;
+}
+
+.button-38:hover {
+  opacity: 0.6;
 }
 
 	</style>
 </head>
 
 	<body>
-	<div class="navbar"><a href="#" class="w3-animate-opacity navbaritem"><i class="fa fa-moon"></i></a><a class="w3-hide-small w3-hide-medium" style="text-decoration: none; cursor: default; pointer-events: none; opacity: 0.5;">My Portfolio</a><a><img src="https://cdn.discordapp.com/avatars/768362780545384449/6664fe457ac776ef9b7602485f4de59c.png" class="profilepicture w3-animate-opacity" alt="pfp"></a></div>
+	<div class="navbar" id="navbar"><a href="javascript:toggleDarkMode()" class="w3-animate-opacity navbaritem"><i class="fa fa-moon"></i></a><a class="w3-hide-small w3-hide-medium" style="text-decoration: none; cursor: default; pointer-events: none; opacity: 0.5;">My Portfolio</a><a><img src="https://cdn.discordapp.com/avatars/768362780545384449/6664fe457ac776ef9b7602485f4de59c.png" class="profilepicture w3-animate-opacity" alt="pfp"></a></div>
 
-<div style="margin: 100px 10%;"><h1 style="color: black; font-size: 48px; float: center;">
-Description
-</h1></div>
+<div class="w3-container w3-row">
+<div class="w3-display-middle" style="text-align: center;">
+ <h1 class="bigtitle">Hello!</h1>
+ <h1>I'm MrPotato30</h1>
+
+<hr>
+
+<button class="button-38" role="button">Informations</button>
+<button class="button-38" role="button">Projects</button>
+<button class="button-38" role="button">Socials</button>
+</div>
+</div>
 
 
 <script>
@@ -141,6 +183,21 @@ Description
 window.addEventListener("contextmenu", function(e) {
     e.preventDefault();
 }, false);
+</script>
+
+<script>
+function toggleDarkMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+   var el = document.getElementById("navbar")
+     if(el.style.color === 'white') {
+      el.style.color = 'black';
+      el.style.backgroundColor = 'white';
+    } else {
+      el.style.color = "white"
+      el.style.backgroundColor = '#333333';
+    }
+}
 </script>
 
 </body>
