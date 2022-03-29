@@ -334,13 +334,13 @@
           )
         ) + " ago";
 
-      let s = 1000;
-      let m = s * 60;
-      let h = m * 60;
-      let d = h * 24;
-      let w = d * 7;
-      let y = d * 365.25;
-      let M = d * 31;
+      const s = 1000;
+      const m = s * 60;
+      const h = m * 60;
+      const d = h * 24;
+      const w = d * 7;
+      const y = d * 365.25;
+      const M = d * 31;
 
       function fmtLong(ms) {
         var msAbs = Math.abs(ms);
