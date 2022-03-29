@@ -369,7 +369,7 @@
 
       function plural(ms, msAbs, n, name) {
         var isPlural = msAbs >= n * 1.5;
-        return Math.floor(ms / n) + " " + name + (isPlural ? "s" : "");
+        return Math.round(ms / n) + " " + name + (isPlural ? "s" : "");
       }
     </script>
   </body>
