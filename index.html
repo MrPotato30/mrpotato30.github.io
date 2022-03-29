@@ -327,12 +327,7 @@
       document.getElementById("age").innerHTML = `${Math.floor(
         new Date().getFullYear() - 2008
       )}`;
-      document.getElementById("startedDev").innerHTML =
-        fmtLong(
-          Math.floor(
-            new Date().getTime() - new Date("April 29, 2021 00:00:00").getTime()
-          )
-        ) + " ago";
+      
 
       const s = 1000;
       const m = s * 60;
@@ -341,6 +336,13 @@
       const w = d * 7;
       const y = d * 365.25;
       const M = d * 31;
+      
+      document.getElementById("startedDev").innerHTML =
+        fmtLong(
+          Math.floor(
+            new Date().getTime() - new Date("April 29, 2021 00:00:00").getTime()
+          )
+        ) + " ago";
 
       function fmtLong(ms) {
         var msAbs = Math.abs(ms);
