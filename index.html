@@ -142,6 +142,16 @@
       }
       .profilepicture:hover {
         box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 4px;
+        border-radius: 37%;
+      }
+
+      @keyframes spin {
+        from {
+          transform:rotate(0deg);
+        }
+        to {
+          transform:rotate(360deg);
+        }
       }
       @keyframes fadeInAnimation {
         0% {
@@ -248,20 +258,20 @@
 
       <hr />
 
-      <div class="w3-container w3-rest">
+      <div class="w3-container">
         <div class="w3-content">
           <h2><b>General Overview</b></h2>
-          <p>
-            I am a self-taught full-stack developer for 8+ months. I am
-            proficient in Javascript, HTML, CSS, MongoDB and nodejs.
+          <p style="font-size: 140%; min-margin: 0 150px;">
+            I am a self-taught full-stack developer. I am
+            proficient in Javascript, HTML, CSS, MongoDB and nodejs. Started programming <a id="startedDev"></a>
           </p>
         </div>
         <br />
         <div class="w3-container w3-rest">
           <div class="w3-content">
             <h2><b>Statistics</b></h2>
-            <p>
-              <i class="fas fa-angle-right"></i> 13 Years old
+            <p style="font-size: 130%;">
+              <i class="fas fa-angle-right"></i> <a id="age"></a> Years old
               <br />
               <i class="fas fa-angle-right"></i> Asian
               <br />
@@ -275,47 +285,82 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
 
-
-<script>
-  document.onkeydown = function(e) {
-    const { keyCode: c } = e;
-    if (e.ctrlKey) {
-        switch (c) {
+    <script>
+      document.onkeydown = function (e) {
+        const { keyCode: c } = e;
+        if (e.ctrlKey) {
+          switch (c) {
             case 83:
             case 85:
             case 65:
             case 73:
             case 123:
-                e.preventDefault();
-                break;
+              e.preventDefault();
+              break;
+          }
+        } else {
+          if (c === 123) e.preventDefault();
         }
-    } else {
-        if(c === 123) e.preventDefault()
-    }
-};
-window.addEventListener("contextmenu", function(e) {
-    e.preventDefault();
-}, false);
-</script>
+      };
+      window.addEventListener(
+        "contextmenu",
+        function (e) {
+          e.preventDefault();
+        },
+        false
+      );
 
-<script>
-function toggleDarkMode() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-   var el = document.getElementById("navbar")
-     if(el.style.color === 'white') {
-      el.style.color = 'black';
-      el.style.backgroundColor = 'white';
-    } else {
-      el.style.color = "white"
-      el.style.backgroundColor = '#333333';
-    }
+      function toggleDarkMode() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+        var el = document.getElementById("navbar");
+        if (el.style.color === "white") {
+          el.style.color = "black";
+          el.style.backgroundColor = "white";
+        } else {
+          el.style.color = "white";
+          el.style.backgroundColor = "#333333";
+        }
+      }
+       document.getElementById("age").innerHTML = `${Math.floor(new Date().getFullYear()-2008)}`
+       document.getElementById("startedDev").innerHTML = fmtLong(Math.floor(new Date().getTime() - new Date('April 29, 2021 00:00:00').getTime())) + ' ago'
+
+ var s = 1000;
+var m = s * 60;
+var h = m * 60;
+var d = h * 24;
+var w = d * 7;
+var y = d * 365.25;
+var M = d * 31
+
+       function fmtLong(ms) {
+  var msAbs = Math.abs(ms);
+  if (msAbs >= y) {
+    return plural(ms, msAbs, y, 'year');
+  }
+  if (msAbs >= M) {
+    return plural(ms, msAbs, M, 'month');
+  }
+  if (msAbs >= d) {
+    return plural(ms, msAbs, d, 'day');
+  }
+  if (msAbs >= h) {
+    return plural(ms, msAbs, h, 'hour');
+  }
+  if (msAbs >= m) {
+    return plural(ms, msAbs, m, 'minute');
+  }
+  if (msAbs >= s) {
+    return plural(ms, msAbs, s, 'second');
+  }
+  return ms + ' ms';
 }
-</script>
 
-</body>
-
+function plural(ms, msAbs, n, name) {
+  var isPlural = msAbs >= n * 1.5;
+  return Math.round(ms / n) + ' ' + name + (isPlural ? 's' : '');
+}
+    </script>
+  </body>
 </html>
