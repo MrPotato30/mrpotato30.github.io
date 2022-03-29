@@ -217,7 +217,10 @@
 
         <hr />
 
-        <button class="button-38" role="button">About</button>
+        <button class="button-38" role="button" onclick="funtion() {document.getElementById('about').scrollIntoView({
+  behavior: 'smooth'
+});
+}">About</button>
         <button class="button-38" role="button">Projects</button>
         <button class="button-38" role="button">Socials</button>
       </div>
@@ -253,6 +256,7 @@
         padding: 50px 0;
       "
       class="section"
+         id="about"
     >
       <h1><b>About Me</b></h1>
 
