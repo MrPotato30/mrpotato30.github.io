@@ -180,9 +180,9 @@
           system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
           sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
           "Noto Color Emoji";
-        font-size: 0.875rem;
+        font-size: 130%;
         font-weight: 600;
-        padding: 0.75rem 0.7rem;
+        padding: 0.75rem 2.5rem;
         text-align: center;
         text-decoration: none #d1d5db solid;
         text-decoration-thickness: auto;
@@ -191,7 +191,7 @@
         user-select: none;
         -webkit-user-select: none;
         transition-duration: 0.2s;
-        margin: 0 2px;
+        margin: 0 4px;
         border: 1px solid rgba(250, 250, 250, 0);
       }
 
@@ -299,11 +299,17 @@
   }
 }
 
+.button-disabled {
+  opacity: 0.55; 
+  pointer-events: none;
+}
 
     </style>
   </head>
 
   <body>
+
+
     <div>
       <div
         class="w3-display-topmiddle"
@@ -324,8 +330,16 @@
         >
           About
         </button>
-        <button class="button-38" role="button">Projects</button>
-        <button class="button-38" role="button">Socials</button>
+        <button
+          class="button-38"
+          role="button"
+          onclick="document.getElementById('projects').scrollIntoView({
+          behavior: 'smooth'
+        });
+        "
+        >
+          Projects
+        </button>
       </div>
 
       <div class="navbar" id="navbar">
@@ -361,17 +375,16 @@
       class="section"
          id="about"
     >
-      <h1><b>About Me</b></h1>
+      <h1 style="text-decoration: underline;"><b>About Me</b></h1>
 
-      <hr />
-
+      <br>
       <div class="w3-container">
         <div class="w3-content">
           <h2><b>General Overview</b></h2>
-          <p style="font-size: 140%; min-margin: 0 150px">
+          <p style="font-size: 140%; margin: 0 10%">
             I am a self-taught full-stack developer. I am proficient in
             Javascript, HTML, CSS, MongoDB and Nodejs. I've been programming for 
-            <a id="startedDev"></a>
+            <a id="startedDev"></a>.
           </p>
         </div>
         <br />
@@ -397,8 +410,8 @@
     <div><h1 style="
         width: auto;
         text-align: center;
-        padding: 50px 0;
-      "><b>My Projects</b></h1>
+        padding-top: 150px;
+      " id="projects"><b>My Projects</b></h1>
 <div class="projects-card">
   <div class="cards">
 
@@ -430,6 +443,16 @@
 
 
   </div>
+</div>
+
+</div>
+
+<div style="background-color: rgba(0, 0, 0, 0.2); width: 100%; height: 100px; margin-top: 200px; color: white;">
+<hr>
+<div class="cards">
+<div style="margin-top: 20px;">
+
+</div>
 </div>
 
 </div>
