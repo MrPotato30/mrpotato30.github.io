@@ -239,8 +239,13 @@
 }
 
 .visit-button {
- text-decoration: none;
- padding: 20px;
+  transition-duration: 250ms;
+  text-decoration: none;
+  margin: 15px;
+  padding: 5px;
+  border: 2px solid;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.2)
 }
 
 .card__exit {
@@ -481,6 +486,7 @@
           el.style.backgroundColor = "#333333";
         }
       }
+
       document.getElementById("age").innerHTML = `${Math.floor(
         new Date().getFullYear() - 2008
       )}`;
