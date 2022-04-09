@@ -367,7 +367,9 @@
       >
         &times;
       </button>
-      <h1>Spud's Socials</h1>
+      <h1>Spud</h1>
+      <br />
+        <p><a href="https://discord.com/users/768362780545384449"><img style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 8px;" id="DiscordImage" alt="Discord Presence"></a></p>
       <hr />
 
       <a href="https://github.com/mrpotato30" target="_blank"
@@ -474,7 +476,7 @@
         <div class="w3-content">
           <h2><b>General Overview</b></h2>
           <p style="font-size: 140%; margin: 0 10%">
-            I am a self-taught full-stack developer. I know Javascript, HTML, CSS, MongoDB and Nodejs. I've been programming for
+            I am a full-stack developer. I know Javascript, HTML, CSS, MongoDB and Nodejs. I've been programming for
             <a id="startedDev"></a>.
           </p>
         </div>
@@ -671,6 +673,8 @@
     </script>
     <script>
       function modal(act) {
+        let theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+        document.getElementById("DiscordImage").src = "https://lanyard.cnrad.dev/api/768362780545384449?idleMessage=No+Activity&theme=" + theme
         const modal = document.getElementById("modal");
         const overlay = document.getElementById("overlay");
         if (!act)
