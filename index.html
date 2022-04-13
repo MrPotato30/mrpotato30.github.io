@@ -742,6 +742,9 @@
    <script>
         document.body.onclick = e => (e.target.parentElement.id !== "contextMenu" && e.target.parentElement.id !== "contextMenuList") ? hideMenu(e) : false;
         document.oncontextmenu = rightClick;
+        document.addEventListener("visibilitychange", () => {
+          document.getElementById("contextMenu").style.display = "none";
+        });
   
         function hideMenu(e) {
             document.getElementById(
