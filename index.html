@@ -751,7 +751,7 @@
         }
   
         function rightClick(e) {
-            let height = window.innerHeight;
+            let height = window.innerHeight + (window.pageYOffset*2);
             let width = window.innerWidth;
             e.preventDefault();
   
