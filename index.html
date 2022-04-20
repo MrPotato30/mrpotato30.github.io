@@ -609,7 +609,7 @@
     >
       <hr />
       <div class="cards">
-        <div style="margin-top: 20px"></div>
+        <div style="margin-top: 20px" id="footer"></div>
       </div>
     </div>
 
@@ -766,5 +766,37 @@
                 menu.style.top = (e.pageY > height/2 ? (e.pageY - menuHeight) : e.pageY) + "px";
         }
     </script>
+<script>
+
+// Keep track of clicked keys
+var isKeyPressed = {
+    'Control': false,
+    'd': false, // ASCII code for 'a'
+};
+ 
+document.onkeydown = (keyDownEvent) => {
+  
+ //Prevent default key actions, if desired
+ keyDownEvent.preventDefault();
+  
+// Track down key click
+ isKeyPressed[keyDownEvent.key] = true;
+  
+// Check described custom shortcut
+if (isKeyPressed["Control"] && isKeyPressed["d"])  {
+ toggleDarkMode()
+}
+};
+  
+document.onkeyup = (keyUpEvent) => {
+  
+ // Prevent default key actions, if desired
+ keyUpEvent.preventDefault();
+  
+ // Track down key release
+ isKeyPressed[keyUpEvent.key] = false;
+};
+
+</script>
   </body>
 </html>
