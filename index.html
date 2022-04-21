@@ -771,6 +771,7 @@
 var isKeyPressed = {
     'Control': false,
     'd': false, // ASCII code for 'a'
+    's': false,
 };
  
 document.onkeydown = (keyDownEvent) => {
@@ -782,9 +783,12 @@ document.onkeydown = (keyDownEvent) => {
  isKeyPressed[keyDownEvent.key] = true;
   
 // Check described custom shortcut
-if (isKeyPressed["Control"] && isKeyPressed["d"])  {
- toggleDarkMode()
-}
+  if (isKeyPressed["Control"] && isKeyPressed["d"])  {
+    toggleDarkMode()
+  }
+  if(isKeyPressed['Control'] && isKeyPressed['s']) {
+    modal()
+  }
 };
   
 document.onkeyup = (keyUpEvent) => {
