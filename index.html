@@ -16,7 +16,7 @@
 
     <meta name="viewport" content="width=device-width" />
 
-    <title>MrPotato30</title>
+    <title>Welcome</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -803,6 +803,14 @@ document.onkeyup = (keyUpEvent) => {
  isKeyPressed[keyUpEvent.key] = false;
 };
 
+</script>
+<script>
+  let i = -1;
+  setInterval(() => {
+     let title = ['spud', 'portfolio']
+     i = (i + 1) % title.length;
+    document.title = title[i]
+  }, 5000)
 </script>
   </body>
 </html>
