@@ -115,11 +115,16 @@
         transform: scale(0.7);
       }
       
-      #taskbarButtonProjects, #taskbarButtonAbout {
+      #taskbarButtonItems {
           transition-duration: 0.2s;
+          display: flex;
+          align-items: center;
+          justify-content: center;
       }
-      #taskbarButtonProjects:hover, #taskbarButtonAbout:hover {
+      #taskbarButtonItems:hover {
           transform: translateY(-0.15em);
+          border-style: solid !important;
+          border-radius: 10px;
       }
 
       .raise:hover {
@@ -513,8 +518,11 @@
           class="w3-animate-opacity navbaritem"
         >
           <i class="fa-solid fa-circle-half-stroke"></i></button
-        ><div id="taskbarButtonWrapper" style="display: none; text-align: center;" class="w3-hide-small w3-hide-medium"><button role="button" id="taskbarButtonAbout" class="w3-hide-small w3-hide-medium" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center'});" style="border: none; display: inline-flex;background: inherit; color: inherit; width: 120px; text-align: center;">About</button>
-         <button id="taskbarButtonProjects" class="w3-hide-small w3-hide-medium" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center'});" style="border: none; display: inline-flex; background: inherit; color: inherit; width: 120px; text-align: center;">Projects</button></div><a
+        ><div id="taskbarButtonWrapper" style="display: none; text-align: center; margin-left: 80px;" class="w3-hide-small w3-hide-medium">
+        <button id="taskbarButtonItems" class="w3-hide-small w3-hide-medium" onclick="topFunction()" style="border: none; display: inline-flex; background: inherit; color: inherit; width: 120px; text-align: center;">Intro</button>
+        <button role="button" id="taskbarButtonItems" class="w3-hide-small w3-hide-medium" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center'});" style="border: none; display: inline-flex;background: inherit; color: inherit; width: 120px; text-align: center;">About</button>
+         <button id="taskbarButtonItems" class="w3-hide-small w3-hide-medium" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center'});" style="border: none; display: inline-flex; background: inherit; color: inherit; width: 120px; text-align: center;">Projects</button>
+         </div><a
           class="w3-hide-small w3-hide-medium"
           id="taskbarText"
           style="
@@ -524,7 +532,7 @@
             opacity: 0.5;
           "
           >My Portfolio</a
-        ><div style="text-align: center;"><a
+        ><div style="text-align: center; display: inline-flex;"><a style="background:inherit;text-align: left; color: inherit;margin-top: 15px; display: none;" id="TaskbarName">Spud</a><a
           style="border-style: hidden; background-color: rgba(0, 0, 0, 0);  text-align: center;"
           onclick="modal()"
           role="button"
@@ -752,6 +760,7 @@
     document.getElementById("taskbarButtonWrapper").style.display = "block";
     document.getElementById("taskbarText").style.display = "none";
     document.getElementById("navbar").style.padding = "0px 3%";
+    document.getElementById("TaskbarName").style.display = "block";
   } else {
     document.getElementById("navbar").style.width = "auto";
     document.getElementById("navbar").style.borderRadius = "100px";
@@ -760,6 +769,7 @@
     document.getElementById("taskbarButtonWrapper").style.display = "none";
     document.getElementById("taskbarText").style.display = "block";
     document.getElementById("navbar").style.padding = "0px";
+    document.getElementById("TaskbarName").style.display = "none";
   }
       }
     </script>
