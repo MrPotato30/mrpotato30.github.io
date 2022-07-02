@@ -513,8 +513,8 @@
           class="w3-animate-opacity navbaritem"
         >
           <i class="fa-solid fa-circle-half-stroke"></i></button
-        ><div id="taskbarButtonWrapper" style="display: none;"><button role="button" id="taskbarButtonAbout" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center'});" style="border: none; display: inline-flex;background: inherit; color: inherit">About</button>
-         <button id="taskbarButtonProjects" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center'});" style="border: none; display: inline-flex; background: inherit; color: inherit">Projects</button></div><a
+        ><div id="taskbarButtonWrapper" style="display: none; text-align: center;" class="w3-hide-small w3-hide-medium"><button role="button" id="taskbarButtonAbout" class="w3-hide-small w3-hide-medium" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center'});" style="border: none; display: inline-flex;background: inherit; color: inherit; width: 120px; text-align: center;">About</button>
+         <button id="taskbarButtonProjects" class="w3-hide-small w3-hide-medium" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center'});" style="border: none; display: inline-flex; background: inherit; color: inherit; width: 120px; text-align: center;">Projects</button></div><a
           class="w3-hide-small w3-hide-medium"
           id="taskbarText"
           style="
@@ -751,7 +751,7 @@
     document.getElementById("navbar").style.opacity = "0.9";
     document.getElementById("taskbarButtonWrapper").style.display = "block";
     document.getElementById("taskbarText").style.display = "none";
-    document.getElementById("navbar").style.padding = "0px 80px";
+    document.getElementById("navbar").style.padding = "0px 3%";
   } else {
     document.getElementById("navbar").style.width = "auto";
     document.getElementById("navbar").style.borderRadius = "100px";
